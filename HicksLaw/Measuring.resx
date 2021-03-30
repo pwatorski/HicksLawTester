@@ -117,4 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Instruction:
+After pressing the "Begin" button a number will show on the "Number prompt", 
+benith it a certain number of buttons will appear. 
+After pressing button corresponding to shown number the proces repeats.
+There are three warmup tests.
+Results will appear after finishing all tests.</value>
+  </data>
 </root>

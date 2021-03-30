@@ -1,6 +1,6 @@
 ﻿namespace HicksLaw
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Wymagana zmienna projektanta.

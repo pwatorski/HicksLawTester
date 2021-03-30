@@ -12,7 +12,7 @@ namespace HicksLaw
         public static int maxButtonsCurrent;
         public static int maxButtonsOverall = 10;
         public static int numOfTries = 0;
-        static Form1 main;
+        static MainForm main;
         /// <summary>
         /// Główny punkt wejścia dla aplikacji.
         /// </summary>
@@ -21,7 +21,7 @@ namespace HicksLaw
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(main = new Form1());
+            Application.Run(main = new MainForm());
         }
 
         public static void UpdateResults(long[][] results)

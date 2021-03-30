@@ -23,6 +23,8 @@ namespace HicksLaw
         Random rng;
         List<Button> buttons;
         Button correctButton;
+        int warmup;
+        readonly int baseWarmup = 3;
         public Measuring()
         {
             InitializeComponent();
@@ -30,7 +32,7 @@ namespace HicksLaw
             finished = false;
             UpdateButtons();
             stopwatch = new Stopwatch();
-            buttonRect = new Rectangle(5, textBox_prompt.Location.Y + textBox_prompt.Height + 5, Math.Max(30, 200 / Program.maxButtonsCurrent), 20);
+            buttonRect = new Rectangle(5, textBox_prompt.Location.Y + textBox_prompt.Height + 5, Math.Max(30, 461 / Program.maxButtonsCurrent), 20);
             rng = new Random(DateTime.Now.Millisecond);
             Setup();
             PopulateButtons();
@@ -47,6 +49,9 @@ namespace HicksLaw
             }
             countsLeft = new List<int>(Enumerable.Range(0, Program.maxButtonsCurrent));
             countsDone = new int[countsLeft.Count];
+            warmup = baseWarmup;
+            progressBar.Maximum = Program.numOfTries * Program.maxButtonsCurrent;
+            progressBar.Value = 0;
 
         }
         protected void PopulateButtons()
@@ -74,14 +79,16 @@ namespace HicksLaw
             }
             else
             {
-                if (chosenButton == correctButton)
+                warmup -= 1;
+                if (warmup < 0 && chosenButton == correctButton)
                 {
                     times[curretnShownButtons][countsDone[curretnShownButtons]] = stopwatch.ElapsedMilliseconds;
                     countsDone[curretnShownButtons] += 1;
+                    progressBar.Value += 1;
                     if (countsDone[curretnShownButtons] >= Program.numOfTries)
                     {
                         countsLeft.Remove(curretnShownButtons);
-
+                        
                     }
                     if (countsLeft.Count == 0)
                     {
@@ -130,6 +137,7 @@ namespace HicksLaw
             button_interrupt.Enabled = running;
             button_exitMeasuring.Enabled = !running;
             button_beginMeasuring.Enabled = !running;
+            label1.Visible = !running;
         }
 
         private void Button_interrupt_Click(object sender, EventArgs e)
