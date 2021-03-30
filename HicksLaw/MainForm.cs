@@ -22,8 +22,8 @@ namespace HicksLaw
             Program.maxButtonsCurrent = (int)numUD_buttons.Value;
             Program.maxButtonsOverall = (int)numUD_buttons.Maximum;
             Program.numOfTries = (int)numUD_tries.Value;
-            var m = new Measuring();
             Enabled = false;
+            var m = new Measuring();
             m.Show();
         }
 

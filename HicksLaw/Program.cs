@@ -13,9 +13,7 @@ namespace HicksLaw
         public static int maxButtonsOverall = 10;
         public static int numOfTries = 0;
         static MainForm main;
-        /// <summary>
-        /// Główny punkt wejścia dla aplikacji.
-        /// </summary>
+
         [STAThread]
         static void Main()
         {

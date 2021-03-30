@@ -12,28 +12,27 @@ namespace HicksLaw
 {
     public partial class Measuring : Form
     {
-        bool running;
-        bool finished;
-        Stopwatch stopwatch;
         Rectangle buttonRect;
-        int curretnShownButtons = -1;
-        long[][] times;
-        List<int> countsLeft;
-        int[] countsDone;
+        Stopwatch stopwatch;
         Random rng;
-        List<Button> buttons;
         Button correctButton;
+        List<Button> buttons;
+        List<int> countsLeft;
+        long[][] times;
+        int[] countsDone;
+        int curretnShownButtons = -1;
         int warmup;
         readonly int baseWarmup = 3;
+        bool running;
+
         public Measuring()
         {
             InitializeComponent();
             running = false;
-            finished = false;
-            UpdateButtons();
             stopwatch = new Stopwatch();
             buttonRect = new Rectangle(5, textBox_prompt.Location.Y + textBox_prompt.Height + 5, Math.Max(30, 461 / Program.maxButtonsCurrent), 20);
             rng = new Random(DateTime.Now.Millisecond);
+            UpdateButtons();
             Setup();
             PopulateButtons();
         }
