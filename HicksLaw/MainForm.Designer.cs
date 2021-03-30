@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.button_begin = new System.Windows.Forms.Button();
             this.numUD_buttons = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
@@ -119,7 +120,7 @@
             this.rTB_results.TabIndex = 5;
             this.rTB_results.Text = "Results";
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -130,7 +131,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.numUD_buttons);
             this.Controls.Add(this.button_begin);
-            this.Name = "Form1";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "MainForm";
             this.Text = "Setup";
             ((System.ComponentModel.ISupportInitialize)(this.numUD_buttons)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUD_tries)).EndInit();

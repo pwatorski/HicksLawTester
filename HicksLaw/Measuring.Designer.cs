@@ -116,6 +116,7 @@
             this.Controls.Add(this.button_exitMeasuring);
             this.Controls.Add(this.button_interrupt);
             this.Controls.Add(this.textBox_prompt);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Measuring";
             this.Text = "Measuring";
             this.ResumeLayout(false);
