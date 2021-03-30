@@ -42,15 +42,15 @@ namespace HicksLaw
             Size = new Size(buttonRect.Width * Program.maxButtonsCurrent + (Program.maxButtonsCurrent + 4) * buttonRect.X, Size.Height);
             MaximumSize = Size;
             MinimumSize = Size;
-            times = new long[Program.maxButtonsCurrent][];
+            times = new long[Program.maxButtonsCurrent-1][];
             for (int i = 0; i < times.Length; i++)
             {
                 times[i] = new long[Program.numOfTries];
             }
-            countsLeft = new List<int>(Enumerable.Range(0, Program.maxButtonsCurrent));
+            countsLeft = new List<int>(Enumerable.Range(0, Program.maxButtonsCurrent-1));
             countsDone = new int[countsLeft.Count];
             warmup = baseWarmup;
-            progressBar.Maximum = Program.numOfTries * Program.maxButtonsCurrent;
+            progressBar.Maximum = Program.numOfTries * (Program.maxButtonsCurrent - 1);
             progressBar.Value = 0;
 
         }
@@ -82,7 +82,8 @@ namespace HicksLaw
                 warmup -= 1;
                 if (warmup < 0 && chosenButton == correctButton)
                 {
-                    times[curretnShownButtons][countsDone[curretnShownButtons]] = stopwatch.ElapsedMilliseconds;
+                    var testNumber = countsDone[curretnShownButtons];
+                    times[curretnShownButtons][testNumber] = stopwatch.ElapsedMilliseconds;
                     countsDone[curretnShownButtons] += 1;
                     progressBar.Value += 1;
                     if (countsDone[curretnShownButtons] >= Program.numOfTries)
@@ -114,7 +115,7 @@ namespace HicksLaw
             {
                 buttons[i].Visible = true;
             }
-            while(shownCount > curretnShownButtons)
+            while(shownCount > 1 + curretnShownButtons)
             {
                 var hide = rng.Next(0, buttons.Count);
                 while(buttons[hide].Visible != true)
