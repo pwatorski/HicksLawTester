@@ -27,7 +27,7 @@ namespace HicksLaw
         }
         public void UpdateResults(long[][] results)
         {
-            var retStr = "C - choices\nT - test number\ntime to make a decision is represented in ms";
+            var retStr = "C - choices\nT - test number\navg - average\nvar - variance\ntime to make a decision is represented in ms";
             var resultsInSconds = results.Select((c) => c.Select((t) => t / 1000f).ToArray()).ToArray();
             var sum = resultsInSconds.Select((c) => c.Sum());
             var avg = resultsInSconds.Select((c) => c.Sum() / c.Length).ToArray();
