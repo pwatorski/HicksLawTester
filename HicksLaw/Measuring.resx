@@ -123,7 +123,7 @@ After pressing the "Begin" button a number will show on the "Number prompt",
 benith it a certain number of buttons will appear. 
 After pressing button corresponding to shown number the proces repeats.
 There are three warmup tests.
-Results will appear after finishing all tests.</value>
+Results will appear in tme main window after finishing all tests.</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

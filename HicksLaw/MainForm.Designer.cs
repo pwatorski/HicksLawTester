@@ -115,16 +115,16 @@
             this.rTB_results.Location = new System.Drawing.Point(95, 12);
             this.rTB_results.Name = "rTB_results";
             this.rTB_results.ReadOnly = true;
-            this.rTB_results.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.rTB_results.Size = new System.Drawing.Size(401, 109);
+            this.rTB_results.Size = new System.Drawing.Size(401, 260);
             this.rTB_results.TabIndex = 5;
-            this.rTB_results.Text = "Results";
+            this.rTB_results.Text = "Results will show up here after finishing tests";
+            this.rTB_results.WordWrap = false;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(508, 131);
+            this.ClientSize = new System.Drawing.Size(508, 282);
             this.Controls.Add(this.rTB_results);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.numUD_tries);
@@ -133,7 +133,7 @@
             this.Controls.Add(this.button_begin);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
-            this.Text = "Setup";
+            this.Text = "Hick\'s law tester";
             ((System.ComponentModel.ISupportInitialize)(this.numUD_buttons)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUD_tries)).EndInit();
             this.ResumeLayout(false);

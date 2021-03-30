@@ -28,5 +28,10 @@ namespace HicksLaw
         {
             main.UpdateResults(results);
         }
+
+        public static void UnfreezeMain()
+        {
+            main.Unfreeze();
+        }
     }
 }

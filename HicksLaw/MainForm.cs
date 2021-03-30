@@ -23,10 +23,18 @@ namespace HicksLaw
             Program.maxButtonsOverall = (int)numUD_buttons.Maximum;
             Program.numOfTries = (int)numUD_tries.Value;
             var m = new Measuring();
+            Enabled = false;
             m.Show();
         }
+
+        public void Unfreeze()
+        {
+            Enabled = true;
+        }
+
         public void UpdateResults(long[][] results)
         {
+            Unfreeze();
             var retStr = "C - choices\nT - test number\navg - average\nvar - variance\ntime to make a decision is represented in ms";
             var resultsInSconds = results.Select((c) => c.Select((t) => t / 1000f).ToArray()).ToArray();
             var sum = resultsInSconds.Select((c) => c.Sum());

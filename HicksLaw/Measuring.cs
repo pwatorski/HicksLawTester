@@ -149,6 +149,7 @@ namespace HicksLaw
 
         private void Button_exitMeasuring_Click(object sender, EventArgs e)
         {
+            Program.UnfreezeMain();
             Close();
         }
 
